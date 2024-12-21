@@ -1,8 +1,14 @@
+import Navbar from "../shared/Navbar/Navbar";
+
 const Root = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <header>
+        <Navbar></Navbar>
+      </header>
+      <main></main>
+      <footer></footer>
+    </>
   );
 };
 

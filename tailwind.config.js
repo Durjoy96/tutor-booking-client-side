@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "noto-sans": ["Noto Sans", "serif"],
+        "Open-Sans": ["Open Sans", "serif"],
       },
       colors: {
         "base-100": "#ffffff",
