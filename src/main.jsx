@@ -8,6 +8,8 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import AuthProvider from "./provider/AuthProvider";
 import { Toaster } from "react-hot-toast";
+import PrivateRoute from "./private/PrivateRoute";
+import AddTutorials from "./pages/AddTutorials/AddTutorials";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/add-tutorials",
+        element: (
+          <PrivateRoute>
+            <AddTutorials></AddTutorials>
+          </PrivateRoute>
+        ),
       },
     ],
   },
