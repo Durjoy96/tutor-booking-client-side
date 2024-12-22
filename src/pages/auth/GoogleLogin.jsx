@@ -1,10 +1,20 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import AxiosSecure from "../../hooks/AxiosSecure";
 
 const GoogleLogin = () => {
   const { googleSignIn } = useContext(AuthContext);
+  const useAxios = AxiosSecure();
   const btnHandler = () => {
-    googleSignIn();
+    googleSignIn().then((res) => {
+      console.log(res.user.displayName);
+      console.log(res);
+      const user = {
+        name: res.user.displayName,
+        email: res.user.email,
+      };
+      useAxios.post("/users", user).then((res) => console.log(res.data));
+    });
   };
   return (
     <>

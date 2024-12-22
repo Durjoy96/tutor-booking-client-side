@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
 import GoogleLogin from "./GoogleLogin";
+import AxiosSecure from "../../hooks/AxiosSecure";
 
 const Register = () => {
   const { createUserWithEmail, updateUser } = useContext(AuthContext);
+  const useAxios = AxiosSecure();
 
   const formHandler = (e) => {
     e.preventDefault();
@@ -14,12 +16,17 @@ const Register = () => {
     const imageURL = form.imageURL.value;
     const email = form.email.value;
     const password = form.password.value;
+    const user = {
+      name,
+      email,
+    };
     createUserWithEmail(email, password)
       .then((res) => {
         updateUser(name, imageURL);
         toast.success("Registration Successful!");
         form.reset();
         console.log(res);
+        useAxios.post("/users", user).then((res) => console.log(res.data));
       })
       .catch((error) => {
         toast.error(error.message);
