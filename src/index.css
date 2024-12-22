@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 @layer components {
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
   .main-container {
     @apply max-w-screen-xl mx-auto px-5;
   }
 
   .primary-btn {
-    @apply btn bg-primary text-primary-content border-none shadow-none hover:bg-primary/80;
+    @apply btn px-8 text-base bg-primary text-primary-content border-none shadow-none hover:bg-primary/80;
   }
 
   .secondary-btn {
-    @apply btn bg-transparent text-primary border-primary shadow-none hover:bg-primary hover:text-primary-content hover:border-primary;
+    @apply btn px-8 text-base bg-transparent text-primary border-primary shadow-none hover:bg-primary hover:text-primary-content hover:border-primary;
   }
 }
