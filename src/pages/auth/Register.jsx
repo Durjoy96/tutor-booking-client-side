@@ -1,6 +1,27 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Register = () => {
+  const { createUserWithEmail, updateUser } = useContext(AuthContext);
+
+  const formHandler = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const imageURL = form.imageURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    createUserWithEmail(email, password)
+      .then((res) => {
+        updateUser(name, imageURL);
+        console.log(res);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
   return (
     <>
       <div className="main-container mt-12 md:mt-20 flex justify-center">
@@ -39,7 +60,7 @@ const Register = () => {
             <p className="px-3 dark:text-gray-600">OR</p>
             <hr className="w-full dark:text-gray-600" />
           </div>
-          <form noValidate="" action="" className="space-y-8">
+          <form onSubmit={formHandler} className="space-y-8">
             <div className="space-y-4">
               <div className="space-y-2">
                 <label htmlFor="email" className="block text-sm">
@@ -92,10 +113,7 @@ const Register = () => {
                 />
               </div>
             </div>
-            <button
-              type="button"
-              className="primary-btn w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50"
-            >
+            <button className="primary-btn w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">
               Register Now!
             </button>
           </form>

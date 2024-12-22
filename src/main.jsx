@@ -6,6 +6,8 @@ import Root from "./routes/Root";
 import Error from "./pages/Error";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
+import AuthProvider from "./provider/AuthProvider";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+      <Toaster />
+    </AuthProvider>
   </StrictMode>
 );
