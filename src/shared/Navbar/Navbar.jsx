@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import NavPage from "./NavPage";
 import { Tooltip } from "react-tooltip";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, signOutUser } = useContext(AuthContext);
   const navbarPages = [
     { path: "/", name: "Home" },
     { path: "/find-tutors", name: "Find tutors" },
@@ -70,7 +73,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end gap-6">
-            {/* {user ? (
+            {user ? (
               <div>
                 <div className="dropdown dropdown-end dropdown-hover">
                   <div tabIndex={0} role="button" className=" m-1">
@@ -84,11 +87,9 @@ const Navbar = () => {
                     tabIndex={0}
                     className="dropdown-content menu bg-base-100 dark:bg-black rounded-box z-[10] w-32 p-2 shadow"
                   >
-                    <li>
-                      <p className="text-base-content font-semibold hover:bg-transparent active:">
-                        {user?.displayName}
-                      </p>
-                    </li>
+                    <p className="text-base-content font-semibold hover:bg-transparent px-2 pt-2">
+                      {user?.displayName}
+                    </p>
                     <li>
                       <button onClick={signOutUser} className="text-red-500">
                         {" "}
@@ -101,20 +102,11 @@ const Navbar = () => {
             ) : (
               <div className="flex gap-5">
                 {" "}
-                <Link
-                  to="/sign-up"
-                  className="btn bg-primary text-primary-content border-none shadow-none hover:bg-primary/80"
-                >
-                  Sign Up
-                </Link>
-                <Link
-                  to="/sign-in"
-                  className="btn bg-transparent text-primary border-primary shadow-none hover:bg-primary hover:text-primary-content hover:border-primary"
-                >
+                <Link to="/login" className="primary-btn">
                   Login
                 </Link>
               </div>
-            )} */}
+            )}
 
             {/* Dark and light mode toggle */}
 
@@ -145,9 +137,6 @@ const Navbar = () => {
                 <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
               </svg>
             </label> */}
-            <Link to="/login" className="primary-btn">
-              Login
-            </Link>
           </div>
         </div>
       </div>
