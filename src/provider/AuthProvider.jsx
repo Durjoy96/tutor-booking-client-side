@@ -2,8 +2,10 @@
 /* eslint-disable react/prop-types */
 import {
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -31,6 +33,11 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  const googleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
+  };
+
   const signOutUser = () => {
     return signOut(auth);
   };
@@ -55,6 +62,7 @@ const AuthProvider = ({ children }) => {
     createUserWithEmail,
     signInWithEmail,
     updateUser,
+    googleSignIn,
     signOutUser,
     user,
     loading,
