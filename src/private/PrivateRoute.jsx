@@ -10,8 +10,8 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <>
-        <div className="absolute top-0 bottom-0 left-0 right-0 bg-base-200/70 flex justify-center items-center">
-          <div className="w-96">
+        <div className="absolute top-0 bottom-0 left-0 right-0 bg-base-200/80 flex justify-center items-center">
+          <div className="w-72 md:w-96">
             <Lottie animationData={Loading} loop={true} />
           </div>
         </div>
