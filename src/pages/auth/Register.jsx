@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   return (
     <>
       <div className="main-container mt-12 md:mt-20 flex justify-center">
         <div className="w-full max-w-md p-4 rounded-md shadow bg-base-100 sm:p-8 dark:bg-gray-50 dark:text-gray-800">
           <h2 className="mb-3 text-3xl font-semibold text-center">
-            Login to your account
+            Register an account
           </h2>
           <p className="text-base text-center dark:text-gray-600">
-            Dont have account?&nbsp;
+            Already have an account?&nbsp;
             <Link
-              to="/register"
+              to="/login"
               rel="noopener noreferrer"
               className="text-primary focus:underline hover:underline"
             >
-              Sign up here
+              Login here
             </Link>
           </p>
           <div className="my-6 space-y-4">
@@ -43,6 +43,30 @@ const Login = () => {
             <div className="space-y-4">
               <div className="space-y-2">
                 <label htmlFor="email" className="block text-sm">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Leroy Jenkins"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="block text-sm">
+                  Image URL
+                </label>
+                <input
+                  type="text"
+                  name="imageURL"
+                  id="imageURL"
+                  placeholder="https://example.com"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="block text-sm">
                   Email address
                 </label>
                 <input
@@ -58,13 +82,6 @@ const Login = () => {
                   <label htmlFor="password" className="text-sm">
                     Password
                   </label>
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="text-xs hover:underline dark:text-gray-600"
-                  >
-                    Forgot password?
-                  </a>
                 </div>
                 <input
                   type="password"
@@ -79,7 +96,7 @@ const Login = () => {
               type="button"
               className="primary-btn w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50"
             >
-              Sign in
+              Register Now!
             </button>
           </form>
         </div>
@@ -88,4 +105,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
