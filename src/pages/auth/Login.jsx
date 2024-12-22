@@ -1,20 +1,22 @@
+import { Link } from "react-router-dom";
+
 const Login = () => {
   return (
     <>
-      <div className="main-container mt-12 flex justify-center">
+      <div className="main-container mt-12 md:mt-20 flex justify-center">
         <div className="w-full max-w-md p-4 rounded-md shadow bg-base-100 sm:p-8 dark:bg-gray-50 dark:text-gray-800">
           <h2 className="mb-3 text-3xl font-semibold text-center">
             Login to your account
           </h2>
           <p className="text-base text-center dark:text-gray-600">
             Dont have account?&nbsp;
-            <a
-              href="#"
+            <Link
+              to="/sign-up"
               rel="noopener noreferrer"
               className="text-primary focus:underline hover:underline"
             >
               Sign up here
-            </a>
+            </Link>
           </p>
           <div className="my-6 space-y-4">
             <button
