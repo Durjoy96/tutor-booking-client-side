@@ -11,6 +11,7 @@ import { Toaster } from "react-hot-toast";
 import PrivateRoute from "./private/PrivateRoute";
 import AddTutorials from "./pages/AddTutorials/AddTutorials";
 import MyTutorials from "./pages/MyTutorials/MyTutorials";
+import FindTutor from "./pages/FindTutor/FindTutor";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
             <MyTutorials />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/find-tutors",
+        element: <FindTutor />,
+        loader: () => fetch("http://localhost:5000/tutorials")
       },
     ],
   },
