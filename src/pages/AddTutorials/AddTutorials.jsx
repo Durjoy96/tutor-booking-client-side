@@ -14,14 +14,15 @@ const AddTutorials = () => {
     const name = form.name.value;
     const email = form.email.value;
     const imageUrl = form.imageUrl.value;
+    const language = form.language.value;
     const price = form.price.value;
     const review = form.review.value;
     const description = form.description.value;
-    console.log({ name, email, imageUrl, price, review, description });
     const tutorial = {
       name,
       email,
       imageUrl,
+      language: language.toLowerCase(),
       price: Number(price),
       review: Number(review),
       description,
@@ -46,7 +47,7 @@ const AddTutorials = () => {
             <h2 className="text-xl md:text-2xl font-bold text-base-content">
               Add Tutorials
             </h2>
-            <p className="text-sm mt-2 md:text-base font-normal text-base-content-secondary">
+            <p className="text-xs mt-2 md:text-base font-normal text-base-content-secondary">
               Easily create and share tutorials by providing essential details
               such as title, description, and content.
             </p>
@@ -85,11 +86,12 @@ const AddTutorials = () => {
                 <label className="form-control w-full">
                   <div className="label">
                     <span className="label-text text-base text-base-content">
-                      What is your tutorial image url?
+                      What is your image url?
                     </span>
                   </div>
                   <input
                     type="text"
+                    name="imageUrl"
                     placeholder="Type here"
                     className="input input-bordered w-full"
                   />
@@ -102,7 +104,7 @@ const AddTutorials = () => {
                   </div>
                   <input
                     type="text"
-                    name="imageUrl"
+                    name="language"
                     placeholder="eg. English"
                     className="input input-bordered w-full"
                   />

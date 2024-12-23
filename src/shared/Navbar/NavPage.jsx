@@ -9,10 +9,10 @@ const NavPage = ({ page }) => {
         <NavLink
           to={path}
           className={({ isActive }) =>
-            `btn text-base bg-transparent border-none shadow-none hover:bg-transparent min-h-8 h-8 lg:min-h-12 lg:h-12 ${
+            `btn text-sm bg-transparent border-none shadow-none hover:bg-transparent min-h-8 h-8 lg:min-h-12 lg:h-12 ${
               isActive
                 ? "text-primary font-bold hover:text-primary/80"
-                : "text-base-content font-medium hover:text-primary"
+                : "text-base-content font-normal hover:text-primary"
             }`
           }
         >

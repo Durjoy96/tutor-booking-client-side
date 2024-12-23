@@ -5,10 +5,10 @@ import Footer from "../shared/Footer/Footer";
 const Root = () => {
   return (
     <>
-      <header className="sticky top-0 bg-base-100/70 backdrop-blur-lg">
+      <header className="sticky top-0 bg-base-100/70 backdrop-blur-lg z-20">
         <Navbar></Navbar>
       </header>
-      <main>
+      <main className="z-10">
         <Outlet />
       </main>
       <Footer />

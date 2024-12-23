@@ -10,6 +10,7 @@ import AuthProvider from "./provider/AuthProvider";
 import { Toaster } from "react-hot-toast";
 import PrivateRoute from "./private/PrivateRoute";
 import AddTutorials from "./pages/AddTutorials/AddTutorials";
+import MyTutorials from "./pages/MyTutorials/MyTutorials";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddTutorials></AddTutorials>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-tutorials",
+        element: (
+          <PrivateRoute>
+            <MyTutorials />
           </PrivateRoute>
         ),
       },

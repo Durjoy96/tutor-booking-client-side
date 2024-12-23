@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "Open-Sans": ["Open Sans", "serif"],
+        "Poppins": ["Poppins", "serif"],
       },
       colors: {
         "base-100": "#ffffff",
