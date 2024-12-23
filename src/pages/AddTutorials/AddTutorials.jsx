@@ -1,9 +1,43 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { LuSendHorizontal } from "react-icons/lu";
+import AxiosSecure from "../../hooks/AxiosSecure";
+import toast from "react-hot-toast";
 
 const AddTutorials = () => {
   const { user } = useContext(AuthContext);
+  const useAxios = AxiosSecure();
+
+  const formHandler = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const imageUrl = form.imageUrl.value;
+    const price = form.price.value;
+    const review = form.review.value;
+    const description = form.description.value;
+    console.log({ name, email, imageUrl, price, review, description });
+    const tutorial = {
+      name,
+      email,
+      imageUrl,
+      price: Number(price),
+      review: Number(review),
+      description,
+    };
+    useAxios
+      .post("/tutorials", tutorial)
+      .then((res) => {
+        console.log(res.data);
+        toast.success("Tutorial Successfully Added!");
+        form.reset();
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   return (
     <>
       <div className="main-container mx-5 md:mx-auto mt-12 md:mt-20 bg-base-100 px-5 py-8 md:p-12 rounded-xl shadow-sm">
@@ -18,7 +52,7 @@ const AddTutorials = () => {
             </p>
           </div>
           <div>
-            <form>
+            <form onSubmit={formHandler}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
                 <label className="form-control w-full">
                   <div className="label">
@@ -28,6 +62,7 @@ const AddTutorials = () => {
                   </div>
                   <input
                     type="text"
+                    name="name"
                     placeholder="Type here"
                     value={user?.displayName}
                     className="input input-bordered w-full"
@@ -41,6 +76,7 @@ const AddTutorials = () => {
                   </div>
                   <input
                     type="text"
+                    name="email"
                     placeholder="Type here"
                     value={user?.email}
                     className="input input-bordered w-full"
@@ -66,6 +102,7 @@ const AddTutorials = () => {
                   </div>
                   <input
                     type="text"
+                    name="imageUrl"
                     placeholder="eg. English"
                     className="input input-bordered w-full"
                   />
@@ -78,7 +115,22 @@ const AddTutorials = () => {
                   </div>
                   <input
                     type="number"
+                    name="price"
                     placeholder="eg. 5000"
+                    className="input input-bordered w-full"
+                  />
+                </label>
+                <label className="form-control w-full">
+                  <div className="label">
+                    <span className="label-text text-base text-base-content">
+                      Review
+                    </span>
+                  </div>
+                  <input
+                    type="number"
+                    name="review"
+                    placeholder=""
+                    value={0}
                     className="input input-bordered w-full"
                   />
                 </label>
@@ -89,6 +141,7 @@ const AddTutorials = () => {
                     </span>
                   </div>
                   <textarea
+                    name="description"
                     className="textarea textarea-bordered"
                     placeholder="Type here"
                   ></textarea>
