@@ -1,5 +1,5 @@
 import { BiStar } from "react-icons/bi";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const FindTutor = () => {
   const tutorials = useLoaderData();
@@ -29,11 +29,12 @@ const FindTutor = () => {
             </svg>
           </label>
         </div>
+        {/* cards */}
         <div className="grid gird-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {tutorials.map((tutorial) => (
             <div
               key={tutorial._id}
-              className="max-w-xs rounded-md shadow-md bg-base-100 dark:bg-gray-50 dark:text-gray-800"
+              className="w-full rounded-md shadow-md bg-base-100 dark:bg-gray-50 dark:text-gray-800"
             >
               <img
                 src={tutorial.imageUrl}
@@ -57,9 +58,13 @@ const FindTutor = () => {
                     </span>
                   </p>
                 </div>
-                <button type="button" className="primary-btn">
+                <Link
+                  to={`/tutor/${tutorial._id}`}
+                  type="button"
+                  className="secondary-btn"
+                >
                   Details
-                </button>
+                </Link>
               </div>
             </div>
           ))}
