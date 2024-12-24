@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AxiosSecure from "../../hooks/AxiosSecure";
 import toast from "react-hot-toast";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import { BiStar } from "react-icons/bi";
 import { MdBookmarkAdd } from "react-icons/md";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const TutorDetails = () => {
   const { details } = useParams();
   const [tutor, setTutor] = useState([]);
   const useAxios = AxiosSecure();
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     useAxios
@@ -17,6 +19,21 @@ const TutorDetails = () => {
       .then((res) => setTutor(res.data))
       .catch((error) => toast.error(error.message));
   }, [details, useAxios]);
+
+  const bookBtnHandler = () => {
+    const tutorInfo = {
+      tutorId: tutor._id,
+      imageUrl: tutor.imageUrl,
+      language: tutor.language,
+      price: tutor.price,
+      tutorEmail: tutor.email,
+      email: user.email,
+    };
+    useAxios
+      .post("/tutor", tutorInfo)
+      .then(() => toast.success("Tutor Booked Successfully!"))
+      .catch((error) => toast.error(error.message));
+  };
 
   return (
     <>
@@ -52,7 +69,10 @@ const TutorDetails = () => {
                 <p className="pt-3 text-base text-base-content">
                   {tutor.description}
                 </p>
-                <button className="primary-btn rounded-full md:absolute md:top-5 md:right-6">
+                <button
+                  onClick={bookBtnHandler}
+                  className="primary-btn rounded-full md:absolute md:top-5 md:right-6"
+                >
                   <MdBookmarkAdd className="w-5 h-5" /> Book
                 </button>
               </div>
