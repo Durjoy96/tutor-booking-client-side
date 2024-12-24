@@ -27,6 +27,7 @@ const TutorDetails = () => {
       language: tutor.language,
       price: tutor.price,
       tutorEmail: tutor.email,
+      tutorName: tutor.name,
       email: user.email,
     };
     useAxios
