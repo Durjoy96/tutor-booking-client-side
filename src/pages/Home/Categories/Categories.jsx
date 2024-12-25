@@ -12,7 +12,7 @@ const Categories = () => {
   });
   return (
     <>
-      <div className="main-container mt-12 md:mt-20 lg:mt-32">
+      <div className="main-container my-12 md:my-20 lg:my-32">
         <div className="max-w-xl">
           <h2 className="text-xl md:text-2xl lg:text-4xl font-bold">
             Explore the World{" "}
