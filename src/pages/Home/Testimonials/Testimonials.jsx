@@ -15,7 +15,7 @@ const Testimonials = () => {
           </div>
           <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
             {/* testimonial 1 */}
-            <div className="flex flex-col max-w-sm mx-4 my-6 border rounded-xl shadow-sm hover:rotate-2 hover:bg-primary hover:text-primary-content">
+            <div className="flex flex-col max-w-sm mx-4 my-6 border rounded-xl shadow-sm hover:rotate-2">
               <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-50">
                 <p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-800">
                   <svg
@@ -54,7 +54,7 @@ const Testimonials = () => {
               </div>
             </div>
             {/* testimonial 2 */}
-            <div className="flex flex-col max-w-sm mx-4 my-6 border rounded-xl shadow-sm hover:rotate-2 hover:bg-primary hover:text-primary-content">
+            <div className="flex flex-col max-w-sm mx-4 my-6 border rounded-xl shadow-sm hover:rotate-2">
               <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-50">
                 <p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-800">
                   <svg
@@ -93,7 +93,7 @@ const Testimonials = () => {
               </div>
             </div>
             {/* testimonial 3 */}
-            <div className="flex flex-col max-w-sm mx-4 my-6 border rounded-xl shadow-sm hover:rotate-2 hover:bg-primary hover:text-primary-content">
+            <div className="flex flex-col max-w-sm mx-4 my-6 border rounded-xl shadow-sm hover:rotate-2">
               <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-50">
                 <p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-800">
                   <svg
@@ -132,7 +132,7 @@ const Testimonials = () => {
               </div>
             </div>
             {/* testimonial 4 */}
-            <div className="flex flex-col max-w-sm mx-4 my-6 border rounded-xl shadow-sm hover:rotate-2 hover:bg-primary hover:text-primary-content">
+            <div className="flex flex-col max-w-sm mx-4 my-6 border rounded-xl shadow-sm hover:rotate-2">
               <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-50">
                 <p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-800">
                   <svg
