@@ -50,7 +50,6 @@ const router = createBrowserRouter([
       {
         path: "/find-tutors",
         element: <FindTutor />,
-        loader: () => fetch("http://localhost:5000/tutorials"),
       },
       {
         path: "/tutor/:details",
@@ -85,7 +84,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router}> </RouterProvider>
       <Toaster position="top-right" />
     </AuthProvider>
   </StrictMode>

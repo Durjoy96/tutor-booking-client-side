@@ -1,8 +1,21 @@
+import { useEffect, useState } from "react";
 import { BiStar } from "react-icons/bi";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
+import AxiosSecure from "../../hooks/AxiosSecure";
 
 const FindTutor = () => {
-  const tutorials = useLoaderData();
+  const [tutorials, setTutorials] = useState([]);
+  const useAxios = AxiosSecure();
+  useEffect(() => {
+    useAxios.get("/tutorials").then((res) => setTutorials(res.data));
+  }, [useAxios]);
+
+  const searchHandler = (e) => {
+    const value = e.target.value;
+    useAxios
+      .get(`/language?language=${value}`)
+      .then((res) => setTutorials(res.data));
+  };
 
   return (
     <>
@@ -13,6 +26,7 @@ const FindTutor = () => {
             <input
               type="text"
               className="grow"
+              onChange={searchHandler}
               placeholder="Search by language"
             />
             <svg
