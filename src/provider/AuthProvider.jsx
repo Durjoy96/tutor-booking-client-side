@@ -58,6 +58,10 @@ const AuthProvider = ({ children }) => {
       } else {
         setUser(null);
         setLoading(false);
+        useAxios
+          .post("/logout", {})
+          .then((res) => console.log(res.data))
+          .catch((error) => console.log(error.message));
       }
     });
 
