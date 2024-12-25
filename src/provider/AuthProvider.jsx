@@ -11,10 +11,12 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.config";
+import AxiosSecure from "../hooks/AxiosSecure";
 
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
+  const useAxios = AxiosSecure();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -47,6 +49,12 @@ const AuthProvider = ({ children }) => {
       if (currentUser) {
         setUser(currentUser);
         setLoading(false);
+        const user = { email: currentUser.email };
+        //generating and storing jwt token
+        useAxios
+          .post("/jwt", user)
+          .then((res) => console.log(res.data))
+          .catch((error) => console.log(error.message));
       } else {
         setUser(null);
         setLoading(false);
