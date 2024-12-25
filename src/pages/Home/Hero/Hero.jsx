@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import heroImg from "../../../assets/icons/hero.png";
+import Stats from "./Stats";
 
 const Hero = () => {
   return (
     <>
-      <section className="bg-base-100 dark:bg-gray-100 dark:text-gray-800">
-        <div className="main-container container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-          <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-2xl lg:text-left">
+      <section className="bg-base-100 sm:py-12 lg:py-24 dark:bg-gray-100 dark:text-gray-800">
+        <div className="max-w-screen-xl px-5 container flex flex-col justify-center  mx-auto lg:flex-row lg:justify-between">
+          <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-2xl lg:text-left">
             <h1 className="text-5xl font-bold leading-none text-base-content sm:text-6xl">
               Master Any <span className="text-primary">Language or Skill</span>{" "}
               with Expert Tutors!
@@ -26,7 +27,7 @@ const Hero = () => {
               <Link
                 rel="noopener noreferrer"
                 to="/register"
-                className="primary-btn text-lg font-semibold dark:bg-violet-600 dark:text-gray-50"
+                className="secondary-btn text-lg font-semibold dark:bg-violet-600 dark:text-gray-50"
               >
                 Become a Tutor
               </Link>
@@ -40,6 +41,7 @@ const Hero = () => {
             />
           </div>
         </div>
+        <Stats />
       </section>
     </>
   );
