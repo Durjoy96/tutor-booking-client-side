@@ -173,7 +173,7 @@ const MyTutorials = () => {
         </div>
         {/* update modal */}
         <dialog id="my_modal_3" className="modal">
-          <div className="modal-box w-11/12 max-w-5xl bg-[#222222]">
+          <div className="modal-box w-11/12 max-w-5xl dark:bg-[#222222]">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
               <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 dark:text-white/90 dark:hover:bg-[#4e4e4e]">

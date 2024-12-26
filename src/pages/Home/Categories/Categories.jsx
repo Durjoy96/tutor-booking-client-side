@@ -9,7 +9,7 @@ const Categories = () => {
   const useAxios = AxiosSecure();
   useEffect(() => {
     useAxios.get("/languages").then((res) => setTutorials(res.data));
-  });
+  }, [useAxios]);
   return (
     <>
       <div className="main-container my-12 md:my-20 lg:my-32">
