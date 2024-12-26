@@ -51,17 +51,21 @@ const AuthProvider = ({ children }) => {
         setLoading(false);
         const user = { email: currentUser.email };
         //generating and storing jwt token
-        axios
-          .post("http://localhost:5000/jwt", user, { withCredentials: true })
-          .then((res) => console.log(res.data))
-          .catch((error) => console.log(error.message));
+        axios.post("https://tutor-booking-server.vercel.app/jwt", user, {
+          withCredentials: true,
+        });
+        // .then((res) => console.log(res.data))
+        // .catch((error) => console.log(error.message));
       } else {
         setUser(null);
         setLoading(false);
-        axios
-          .post("http://localhost:5000/logout", {}, { withCredentials: true })
-          .then((res) => console.log(res.data))
-          .catch((error) => console.log(error.message));
+        axios.post(
+          "https://tutor-booking-server.vercel.app/logout",
+          {},
+          { withCredentials: true }
+        );
+        // .then((res) => console.log(res.data))
+        // .catch((error) => console.log(error.message));
       }
     });
 
@@ -78,6 +82,7 @@ const AuthProvider = ({ children }) => {
     signOutUser,
     user,
     loading,
+    setLoading,
     setDarkMode,
     darkMode,
   };

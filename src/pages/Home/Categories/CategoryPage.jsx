@@ -3,16 +3,26 @@ import AxiosSecure from "../../../hooks/AxiosSecure";
 import { useEffect, useState } from "react";
 import { BiStar } from "react-icons/bi";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
+import Loading from "../../../components/Loading/Loading";
 
 const CategoryPage = () => {
   const [tutors, setTutors] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { category } = useParams();
   const useAxios = AxiosSecure();
   useEffect(() => {
     useAxios
       .get(`/language?language=${category}`)
-      .then((res) => setTutors(res.data));
+      .then((res) => {
+        setTutors(res.data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, [useAxios, category]);
+
+  if (loading) {
+    return <Loading />; //Display a loading message until the data has been received
+  }
   return (
     <>
       <div className="main-container mt-12 md:mt-20">

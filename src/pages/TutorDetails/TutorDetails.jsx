@@ -6,19 +6,31 @@ import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import { BiStar } from "react-icons/bi";
 import { MdBookmarkAdd } from "react-icons/md";
 import { AuthContext } from "../../provider/AuthProvider";
+import Loading from "../../components/Loading/Loading";
 
 const TutorDetails = () => {
   const { details } = useParams();
   const [tutor, setTutor] = useState([]);
+  const [loading, setLoading] = useState(true);
   const useAxios = AxiosSecure();
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
     useAxios
       .get(`/tutorial/${details}`)
-      .then((res) => setTutor(res.data))
-      .catch((error) => toast.error(error.message));
+      .then((res) => {
+        setTutor(res.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+        setLoading(false);
+      });
   }, [details, useAxios]);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   const bookBtnHandler = () => {
     const tutorInfo = {
@@ -67,7 +79,7 @@ const TutorDetails = () => {
                     {tutor.review}
                   </span>
                 </p>
-                <p className="pt-3 text-base text-base-content text-white/60">
+                <p className="pt-3 text-base text-base-content dark:text-white/60">
                   {tutor.description}
                 </p>
                 <button

@@ -4,17 +4,27 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { BiStar } from "react-icons/bi";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import toast from "react-hot-toast";
+import Loading from "../../components/Loading/Loading";
 
 const BookedTutors = () => {
   const [bookedTutors, setBookedTutors] = useState([]);
-  console.log(bookedTutors);
+  const [loading, setLoading] = useState(true);
+  // console.log(bookedTutors);
   const { user } = useContext(AuthContext);
   const useAxios = AxiosSecure();
   useEffect(() => {
     useAxios
-      .get(`http://localhost:5000/booked?email=${user.email}`)
-      .then((res) => setBookedTutors(res.data));
+      .get(`https://tutor-booking-server.vercel.app/booked?email=${user.email}`)
+      .then((res) => {
+        setBookedTutors(res.data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, [user, useAxios]);
+
+  if (loading) {
+    return <Loading />; //Display a loading message until the data has been received
+  }
 
   const reviewBtnHandler = (id) => {
     useAxios

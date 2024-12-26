@@ -12,10 +12,10 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     signInWithEmail(email, password)
-      .then((res) => {
+      .then(() => {
         toast.success("login Successfully!");
         form.reset();
-        console.log(res);
+        // console.log(res);
       })
       .catch((error) => {
         toast.error(error.message);

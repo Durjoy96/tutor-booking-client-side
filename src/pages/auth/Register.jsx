@@ -21,12 +21,13 @@ const Register = () => {
       email,
     };
     createUserWithEmail(email, password)
-      .then((res) => {
+      .then(() => {
         updateUser(name, imageURL);
         toast.success("Registration Successful!");
         form.reset();
-        console.log(res);
-        useAxios.post("/users", user).then((res) => console.log(res.data));
+        // console.log(res);
+        useAxios.post("/users", user)
+        // .then((res) => console.log(res.data));
       })
       .catch((error) => {
         toast.error(error.message);

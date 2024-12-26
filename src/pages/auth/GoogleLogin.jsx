@@ -7,8 +7,8 @@ const GoogleLogin = () => {
   const useAxios = AxiosSecure();
   const btnHandler = () => {
     googleSignIn().then((res) => {
-      console.log(res.user.displayName);
-      console.log(res);
+      // console.log(res.user.displayName);
+      // console.log(res);
       const user = {
         name: res.user.displayName,
         email: res.user.email,

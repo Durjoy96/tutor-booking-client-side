@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://tutor-booking-server.vercel.app",
   withCredentials: true,
 });
 

@@ -2,13 +2,25 @@ import { useEffect, useState } from "react";
 import { BiStar } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import AxiosSecure from "../../hooks/AxiosSecure";
+import Loading from "../../components/Loading/Loading";
 
 const FindTutor = () => {
   const [tutorials, setTutorials] = useState([]);
+  const [loading, setLoading] = useState(true);
   const useAxios = AxiosSecure();
   useEffect(() => {
-    useAxios.get("/tutorials").then((res) => setTutorials(res.data));
-  }, [useAxios]);
+    useAxios
+      .get("/tutorials")
+      .then((res) => {
+        setTutorials(res.data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, [useAxios, setLoading]);
+
+  if (loading) {
+    return <Loading />; //Display a loading message until the data has been received
+  }
 
   const searchHandler = (e) => {
     const value = e.target.value;

@@ -8,7 +8,7 @@ const Stats = () => {
   useEffect(() => {
     useAxios.get("/stats").then((res) => {
       setStats(res.data);
-      console.log(res.data);
+      // console.log(res.data);
     });
   }, [useAxios]);
   return (

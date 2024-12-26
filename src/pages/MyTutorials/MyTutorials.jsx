@@ -5,6 +5,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { GrUpdate } from "react-icons/gr";
+import Loading from "../../components/Loading/Loading";
 
 const MyTutorials = () => {
   const [tutorials, setTutorials] = useState([]);
@@ -13,12 +14,23 @@ const MyTutorials = () => {
   const [refresh, setRefresh] = useState(false); //update the table ui after updating tutorial
   const { user } = useContext(AuthContext);
   const useAxios = AxiosSecure();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    useAxios.get(`/my-tutorials?email=${user.email}`).then((res) => {
-      setTutorials(res.data);
-    });
+    useAxios
+      .get(`/my-tutorials?email=${user.email}`)
+      .then((res) => {
+        setTutorials(res.data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
+      });
   }, [refresh]);
+
+  if (loading) {
+    return <Loading />; //Display a loading message until the data has been received
+  }
 
   const deleteBtnHandler = (id) => {
     Swal.fire({
@@ -55,7 +67,7 @@ const MyTutorials = () => {
     setUpdateTutorialId(id);
     const [tutorial] = tutorials.filter((tutorial) => tutorial._id === id);
     setUpdateTutorialData(tutorial);
-    console.log(tutorial);
+    // console.log(tutorial);
   };
 
   const updateFormHandler = (e) => {
@@ -92,78 +104,72 @@ const MyTutorials = () => {
     <>
       <div className="main-container mt-12 md:mt-20">
         <div className="overflow-x-auto bg-base-100 p-5 md:p-8 lg:p-12 rounded-xl shadow-sm dark:bg-[#222222] dark:text-white/70">
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr className="dark:text-white/90">
-                <th>Name</th>
-                <th>Language</th>
-                <th>Price</th>
-                <th>Description</th>
-                <th>Review</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* row */}
-              {tutorials.length ? (
-                tutorials.map((tutorial, idx) => {
-                  return (
-                    <tr key={idx}>
-                      <td>
-                        <div className="flex items-center gap-3">
-                          <div className="avatar">
-                            <div className="mask mask-squircle h-12 w-12">
-                              <img
-                                src={tutorial?.imageUrl}
-                                alt="Avatar Tailwind CSS Component"
-                              />
-                            </div>
-                          </div>
-                          <div>
-                            <div className="font-bold">{tutorial?.name}</div>
+          {tutorials.map((tutorial, idx) => {
+            return (
+              <table className="table" key={idx}>
+                {/* head */}
+                <thead>
+                  <tr className="dark:text-white/90">
+                    <th>Name</th>
+                    <th>Language</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Review</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* row */}
+                  <tr>
+                    <td>
+                      <div className="flex items-center gap-3">
+                        <div className="avatar">
+                          <div className="mask mask-squircle h-12 w-12">
+                            <img
+                              src={tutorial?.imageUrl}
+                              alt="Avatar Tailwind CSS Component"
+                            />
                           </div>
                         </div>
-                      </td>
-                      <td>
-                        <span className="badge badge-ghost bg-primary/10 text-primary badge-md dark:border-none">
-                          {tutorial?.language.charAt(0).toUpperCase() +
-                            tutorial?.language.slice(1)}
-                        </span>
-                      </td>
-                      <td>{tutorial.price} BDT</td>
-                      <td>
-                        <p className="text-base-content dark:text-white/50">
-                          {tutorial.description}
-                        </p>
-                      </td>
-                      <th>{tutorial.review}</th>
-                      <th>
-                        <div className="flex justify-end gap-6">
-                          <button
-                            onClick={() => deleteBtnHandler(tutorial._id)}
-                            className="btn btn-ghost btn-xs bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-content"
-                          >
-                            Delete
-                          </button>
-                          <button
-                            onClick={() => updateBtnHandler(tutorial._id)}
-                            className="btn btn-ghost btn-xs bg-primary border-primary text-primary-content hover:bg-primary hover:opacity-80"
-                          >
-                            Update
-                          </button>
+                        <div>
+                          <div className="font-bold">{tutorial?.name}</div>
                         </div>
-                      </th>
-                    </tr>
-                  );
-                })
-              ) : (
-                <p className="absolute left-1/2 -translate-x-1/2 mt-3 text-red-500">
-                  Oops! There&apos;s Nothing Here
-                </p>
-              )}
-            </tbody>
-          </table>
+                      </div>
+                    </td>
+                    <td>
+                      <span className="badge badge-ghost bg-primary/10 text-primary badge-md dark:border-none">
+                        {tutorial?.language.charAt(0).toUpperCase() +
+                          tutorial?.language.slice(1)}
+                      </span>
+                    </td>
+                    <td>{tutorial.price} BDT</td>
+                    <td>
+                      <p className="text-base-content dark:text-white/50">
+                        {tutorial.description}
+                      </p>
+                    </td>
+                    <th>{tutorial.review}</th>
+                    <th>
+                      <div className="flex justify-end gap-6">
+                        <button
+                          onClick={() => deleteBtnHandler(tutorial._id)}
+                          className="btn btn-ghost btn-xs bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-content"
+                        >
+                          Delete
+                        </button>
+                        <button
+                          onClick={() => updateBtnHandler(tutorial._id)}
+                          className="btn btn-ghost btn-xs bg-primary border-primary text-primary-content hover:bg-primary hover:opacity-80"
+                        >
+                          Update
+                        </button>
+                      </div>
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            );
+          })}
         </div>
         {/* update modal */}
         <dialog id="my_modal_3" className="modal">

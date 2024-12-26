@@ -59,7 +59,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/tutor/${params.details}`),
+          fetch(
+            `https://tutor-booking-server.vercel.app/tutor/${params.details}`
+          ),
       },
       {
         path: "/my-booked-tutors",

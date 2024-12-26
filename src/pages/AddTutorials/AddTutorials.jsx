@@ -29,8 +29,8 @@ const AddTutorials = () => {
     };
     useAxios
       .post("/tutorials", tutorial)
-      .then((res) => {
-        console.log(res.data);
+      .then(() => {
+        // console.log(res.data);
         toast.success("Tutorial Successfully Added!");
         form.reset();
       })
