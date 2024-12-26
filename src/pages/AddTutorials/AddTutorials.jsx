@@ -41,10 +41,10 @@ const AddTutorials = () => {
 
   return (
     <>
-      <div className="main-container mx-5 md:mx-auto mt-12 md:mt-20 bg-base-100 px-5 py-8 md:p-12 rounded-xl shadow-sm">
+      <div className="main-container mx-5 md:mx-auto mt-12 md:mt-20 bg-base-100 px-5 py-8 md:p-12 rounded-xl shadow-sm dark:bg-[#222222]">
         <div className="grid grid-cols-1 md:grid-cols-[.5fr_1fr] gap-6 md:gap-8 lg:gap-12">
           <div>
-            <h2 className="text-xl md:text-2xl font-bold text-base-content">
+            <h2 className="text-xl md:text-2xl font-bold text-base-content dark:text-white/90">
               Add Tutorials
             </h2>
             <p className="text-xs mt-2 md:text-base font-normal text-base-content-secondary">
@@ -57,7 +57,7 @@ const AddTutorials = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
                 <label className="form-control w-full">
                   <div className="label">
-                    <span className="label-text text-base text-base-content">
+                    <span className="label-text text-base text-base-content dark:text-white/90">
                       What is your name?
                     </span>
                   </div>
@@ -66,12 +66,12 @@ const AddTutorials = () => {
                     name="name"
                     placeholder="Type here"
                     value={user?.displayName}
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                   />
                 </label>
                 <label className="form-control w-full">
                   <div className="label">
-                    <span className="label-text text-base text-base-content">
+                    <span className="label-text text-base text-base-content dark:text-white/90">
                       What is your email address?
                     </span>
                   </div>
@@ -80,12 +80,12 @@ const AddTutorials = () => {
                     name="email"
                     placeholder="Type here"
                     value={user?.email}
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                   />
                 </label>
                 <label className="form-control w-full">
                   <div className="label">
-                    <span className="label-text text-base text-base-content">
+                    <span className="label-text text-base text-base-content dark:text-white/90">
                       What is your image url?
                     </span>
                   </div>
@@ -93,12 +93,12 @@ const AddTutorials = () => {
                     type="text"
                     name="imageUrl"
                     placeholder="Type here"
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                   />
                 </label>
                 <label className="form-control w-full">
                   <div className="label">
-                    <span className="label-text text-base text-base-content">
+                    <span className="label-text text-base text-base-content dark:text-white/90">
                       What language is your tutorial in?
                     </span>
                   </div>
@@ -106,12 +106,12 @@ const AddTutorials = () => {
                     type="text"
                     name="language"
                     placeholder="eg. English"
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                   />
                 </label>
                 <label className="form-control w-full">
                   <div className="label">
-                    <span className="label-text text-base text-base-content">
+                    <span className="label-text text-base text-base-content dark:text-white/90">
                       Set the price for your tutorial
                     </span>
                   </div>
@@ -119,12 +119,12 @@ const AddTutorials = () => {
                     type="number"
                     name="price"
                     placeholder="eg. 5000"
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                   />
                 </label>
                 <label className="form-control w-full">
                   <div className="label">
-                    <span className="label-text text-base text-base-content">
+                    <span className="label-text text-base text-base-content dark:text-white/90">
                       Review
                     </span>
                   </div>
@@ -133,18 +133,18 @@ const AddTutorials = () => {
                     name="review"
                     placeholder=""
                     value={0}
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                   />
                 </label>
                 <label className="form-control w-full">
                   <div className="label">
-                    <span className="label-text text-base text-base-content">
+                    <span className="label-text text-base text-base-content dark:text-white/90">
                       Provide a Description
                     </span>
                   </div>
                   <textarea
                     name="description"
-                    className="textarea textarea-bordered"
+                    className="textarea textarea-bordered dark:bg-[#4e4e4e] dark:text-white/60"
                     placeholder="Type here"
                   ></textarea>
                 </label>

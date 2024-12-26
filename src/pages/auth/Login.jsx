@@ -24,11 +24,11 @@ const Login = () => {
   return (
     <>
       <div className="main-container mt-12 md:mt-20 flex justify-center">
-        <div className="w-full max-w-md p-4 rounded-md shadow bg-base-100 sm:p-8 dark:bg-gray-50 dark:text-gray-800">
+        <div className="w-full max-w-md p-4 rounded-md shadow bg-base-100 sm:p-8 dark:bg-[#222222] dark:text-white/90">
           <h2 className="mb-3 text-3xl font-semibold text-center">
             Login to your account
           </h2>
-          <p className="text-base text-center dark:text-gray-600">
+          <p className="text-base text-center dark:text-white/60">
             Dont have account?&nbsp;
             <Link
               to="/register"
@@ -42,9 +42,9 @@ const Login = () => {
             <GoogleLogin />
           </div>
           <div className="flex items-center w-full my-4">
-            <hr className="w-full dark:text-gray-600" />
-            <p className="px-3 dark:text-gray-600">OR</p>
-            <hr className="w-full dark:text-gray-600" />
+            <hr className="w-full dark:text-white/60" />
+            <p className="px-3 dark:text-white/60">OR</p>
+            <hr className="w-full dark:text-white/60" />
           </div>
           <form onSubmit={formHandler} className="space-y-8">
             <div className="space-y-4">
@@ -57,7 +57,7 @@ const Login = () => {
                   name="email"
                   id="email"
                   placeholder="leroy@jenkins.com"
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                  className="w-full px-3 py-2 border rounded-md dark:border-none dark:bg-[#4e4e4e] dark:text-white/60"
                 />
               </div>
               <div className="space-y-2">
@@ -68,7 +68,7 @@ const Login = () => {
                   <a
                     rel="noopener noreferrer"
                     href="#"
-                    className="text-xs hover:underline dark:text-gray-600"
+                    className="text-xs hover:underline dark:text-white/60"
                   >
                     Forgot password?
                   </a>
@@ -78,11 +78,11 @@ const Login = () => {
                   name="password"
                   id="password"
                   placeholder="*****"
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                  className="w-full px-3 py-2 border rounded-md dark:border-none dark:bg-[#4e4e4e] dark:text-white/60"
                 />
               </div>
             </div>
-            <button className="primary-btn w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">
+            <button className="primary-btn w-full px-8 py-3 font-semibold rounded-md">
               Login
             </button>
           </form>

@@ -22,7 +22,7 @@ const GoogleLogin = () => {
         onClick={btnHandler}
         aria-label="Login with Google"
         type="button"
-        className=" flex items-center justify-center w-full p-4 space-x-4 border rounded-md dark:border-gray-600 hover:bg-base-200 hover:border-transparent hover:text-base-content-secondary"
+        className=" flex items-center justify-center w-full p-4 space-x-4 border rounded-md dark:border-gray-600 hover:bg-base-200 hover:border-transparent hover:text-base-content-secondary dark:hover:bg-[#4e4e4e] dark:hover:text-white/90"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

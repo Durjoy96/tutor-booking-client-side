@@ -22,10 +22,10 @@ const FindTutor = () => {
       <div className="main-container mt-12 md:mt-20">
         {/* search by language */}
         <div className="flex justify-end mb-12">
-          <label className="input input-bordered flex items-center gap-2">
+          <label className="input input-bordered flex items-center gap-2 dark:bg-[#222222] ">
             <input
               type="text"
-              className="grow"
+              className="grow dark:text-white/90"
               onChange={searchHandler}
               placeholder="Search by language"
             />
@@ -33,7 +33,7 @@ const FindTutor = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
               fill="currentColor"
-              className="h-4 w-4 opacity-70"
+              className="h-4 w-4 opacity-70 dark:fill-white/90"
             >
               <path
                 fillRule="evenodd"
@@ -48,7 +48,7 @@ const FindTutor = () => {
           {tutorials.map((tutorial) => (
             <div
               key={tutorial._id}
-              className="w-full rounded-md shadow-md bg-base-100 dark:bg-gray-50 dark:text-gray-800"
+              className="w-full rounded-md shadow-md bg-base-100 dark:bg-[#222222] dark:text-white/90"
             >
               <img
                 src={tutorial.imageUrl}
@@ -57,17 +57,17 @@ const FindTutor = () => {
               />
               <div className="flex flex-col justify-between p-6 space-y-8">
                 <div className="space-y-2">
-                  <h2 className="text-xl font-semibold tracking-wide text-base-content">
+                  <h2 className="text-xl font-semibold tracking-wide text-base-content dark:text-white/90">
                     {tutorial.name}
                   </h2>
-                  <span className="badge badge-ghost bg-primary/10 text-primary badge-md">
+                  <span className="badge badge-ghost bg-primary/10 text-primary badge-md dark:border-none">
                     {tutorial?.language.charAt(0).toUpperCase() +
                       tutorial?.language.slice(1)}
                   </span>
                   <p className="text-base text-base-content-secondary flex items-center gap-1">
                     <BiStar />
                     Review:{" "}
-                    <span className="text-base-content font-semibold">
+                    <span className="text-base-content font-semibold dark:text-white/90">
                       {tutorial.review}
                     </span>
                   </p>

@@ -3,7 +3,7 @@ import contactImg from "../../../assets/icons/contact.png";
 const Contact = () => {
   return (
     <>
-      <div className="main-container pt-12 md:pt-20 lg:pt-32 grid grid-cols-1 gap-8 mx-auto rounded-lg md:grid-cols-2 dark:bg-gray-100 dark:text-gray-800">
+      <div className="main-container mt-12 md:mt-20 lg:mt-32 grid grid-cols-1 gap-8 mx-auto rounded-lg md:grid-cols-2 dark:bg-dark dark:text-white/90">
         <div className="flex flex-col justify-between">
           <div className="space-y-2">
             <h2 className="text-xl font-semibold leading-tight md:text-3xl lg:text-4xl">
@@ -24,7 +24,7 @@ const Contact = () => {
               id="name"
               type="text"
               placeholder=""
-              className="w-full p-3 rounded dark:bg-gray-100"
+              className="w-full p-3 rounded dark:bg-[#222222]"
             />
           </div>
           <div>
@@ -34,7 +34,7 @@ const Contact = () => {
             <input
               id="email"
               type="email"
-              className="w-full p-3 rounded dark:bg-gray-100"
+              className="w-full p-3 rounded dark:bg-[#222222]"
             />
           </div>
           <div>
@@ -44,12 +44,12 @@ const Contact = () => {
             <textarea
               id="message"
               rows="3"
-              className="w-full p-3 rounded dark:bg-gray-100"
+              className="w-full p-3 rounded dark:bg-[#222222]"
             ></textarea>
           </div>
           <button
             type="submit"
-            className="primary-btn w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-violet-600 dark:text-gray-50"
+            className="primary-btn w-full p-3 text-sm font-bold tracking-wide uppercase rounded dark:bg-primary dark:text-gray-50"
           >
             Send Message
           </button>

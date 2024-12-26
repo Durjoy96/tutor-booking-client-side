@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "Poppins": ["Poppins", "serif"],
+        Poppins: ["Poppins", "serif"],
       },
       colors: {
         "base-100": "#ffffff",
@@ -18,5 +18,6 @@ export default {
       },
     },
   },
+  darkMode: "class",
   plugins: [daisyui],
 };

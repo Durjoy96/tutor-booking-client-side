@@ -40,7 +40,7 @@ const TutorDetails = () => {
     <>
       <div className="main-container mt-12 md:mt-20 ">
         <div className="flex justify-center">
-          <div className="flex flex-col justify-center max-w-xl p-6 shadow-md rounded-xl sm:px-12 bg-base-100 dark:bg-gray-50 dark:text-gray-800 relative">
+          <div className="flex flex-col justify-center max-w-xl p-6 shadow-md rounded-xl sm:px-12 bg-base-100 dark:bg-[#222222] dark:text-white/90 relative">
             <img
               src={tutor.imageUrl}
               alt=""
@@ -51,23 +51,23 @@ const TutorDetails = () => {
                 <h2 className="text-xl font-semibold sm:text-2xl">
                   {tutor.name}
                 </h2>
-                <p className="badge badge-ghost bg-primary/10 text-primary badge-md">
+                <p className="badge badge-ghost bg-primary/10 text-primary badge-md dark:border-none">
                   {tutor.language &&
                     tutor.language.charAt(0).toUpperCase() +
                       tutor.language.slice(1)}
                 </p>
-                <p className=" text-xs sm:text-base dark:text-gray-600 flex items-center gap-1">
+                <p className="text-xs sm:text-base dark:text-white/70 flex items-center gap-1">
                   <FaBangladeshiTakaSign className="w-4 h-4 fill-primary" />{" "}
                   {tutor.price} BDT
                 </p>
                 <p className="text-base text-base-content-secondary flex items-center gap-1">
                   <BiStar />
                   Review:{" "}
-                  <span className="text-base-content font-semibold">
+                  <span className="text-base-content font-semibold dark:text-white/90">
                     {tutor.review}
                   </span>
                 </p>
-                <p className="pt-3 text-base text-base-content">
+                <p className="pt-3 text-base text-base-content text-white/60">
                   {tutor.description}
                 </p>
                 <button
@@ -82,7 +82,7 @@ const TutorDetails = () => {
                   rel="noopener noreferrer"
                   href="#"
                   aria-label="GitHub"
-                  className="p-2 rounded-md dark:text-gray-800 hover:dark:text-violet-600"
+                  className="p-2 rounded-md dark:text-white/60 hover:dark:text-violet-600"
                 >
                   <svg
                     viewBox="0 0 496 512"
@@ -96,7 +96,7 @@ const TutorDetails = () => {
                   rel="noopener noreferrer"
                   href="#"
                   aria-label="Dribble"
-                  className="p-2 rounded-md dark:text-gray-800 hover:dark:text-violet-600"
+                  className="p-2 rounded-md dark:text-white/60 hover:dark:text-violet-600"
                 >
                   <svg
                     viewBox="0 0 512 512"
@@ -110,7 +110,7 @@ const TutorDetails = () => {
                   rel="noopener noreferrer"
                   href="#"
                   aria-label="Twitter"
-                  className="p-2 rounded-md dark:text-gray-800 hover:dark:text-violet-600"
+                  className="p-2 rounded-md dark:text-white/60 hover:dark:text-violet-600"
                 >
                   <svg
                     viewBox="0 0 512 512"
@@ -124,7 +124,7 @@ const TutorDetails = () => {
                   rel="noopener noreferrer"
                   href="#"
                   aria-label="Email"
-                  className="p-2 rounded-md dark:text-gray-800 hover:dark:text-violet-600"
+                  className="p-2 rounded-md dark:text-white/60 hover:dark:text-violet-600"
                 >
                   <svg
                     viewBox="0 0 512 512"

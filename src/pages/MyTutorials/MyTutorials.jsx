@@ -91,11 +91,11 @@ const MyTutorials = () => {
   return (
     <>
       <div className="main-container mt-12 md:mt-20">
-        <div className="overflow-x-auto bg-base-100 p-5 md:p-8 lg:p-12 rounded-xl shadow-sm">
+        <div className="overflow-x-auto bg-base-100 p-5 md:p-8 lg:p-12 rounded-xl shadow-sm dark:bg-[#222222] dark:text-white/70">
           <table className="table">
             {/* head */}
             <thead>
-              <tr>
+              <tr className="dark:text-white/90">
                 <th>Name</th>
                 <th>Language</th>
                 <th>Price</th>
@@ -126,14 +126,14 @@ const MyTutorials = () => {
                         </div>
                       </td>
                       <td>
-                        <span className="badge badge-ghost bg-primary/10 text-primary badge-md">
+                        <span className="badge badge-ghost bg-primary/10 text-primary badge-md dark:border-none">
                           {tutorial?.language.charAt(0).toUpperCase() +
                             tutorial?.language.slice(1)}
                         </span>
                       </td>
                       <td>{tutorial.price} BDT</td>
                       <td>
-                        <p className="text-base-content">
+                        <p className="text-base-content dark:text-white/50">
                           {tutorial.description}
                         </p>
                       </td>
@@ -167,16 +167,16 @@ const MyTutorials = () => {
         </div>
         {/* update modal */}
         <dialog id="my_modal_3" className="modal">
-          <div className="modal-box w-11/12 max-w-5xl">
+          <div className="modal-box w-11/12 max-w-5xl bg-[#222222]">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 dark:text-white/90 dark:hover:bg-[#4e4e4e]">
                 ✕
               </button>
             </form>
             <div className="grid grid-cols-1 md:grid-cols-[.5fr_1fr] gap-6 md:gap-8 lg:gap-12">
               <div>
-                <h2 className="text-xl md:text-2xl font-bold text-base-content">
+                <h2 className="text-xl md:text-2xl font-bold text-base-content dark:text-white/90">
                   Update Your Tutorial
                 </h2>
                 <p className="text-xs mt-2 md:text-base font-normal text-base-content-secondary">
@@ -189,7 +189,7 @@ const MyTutorials = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
                     <label className="form-control w-full">
                       <div className="label">
-                        <span className="label-text text-base text-base-content">
+                        <span className="label-text text-base text-base-content dark:text-white/90">
                           What is your name?
                         </span>
                       </div>
@@ -198,12 +198,12 @@ const MyTutorials = () => {
                         name="name"
                         placeholder="Type here"
                         value={user?.displayName}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                       />
                     </label>
                     <label className="form-control w-full">
                       <div className="label">
-                        <span className="label-text text-base text-base-content">
+                        <span className="label-text text-base text-base-content dark:text-white/90">
                           What is your email address?
                         </span>
                       </div>
@@ -212,12 +212,12 @@ const MyTutorials = () => {
                         name="email"
                         placeholder="Type here"
                         value={user?.email}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                       />
                     </label>
                     <label className="form-control w-full">
                       <div className="label">
-                        <span className="label-text text-base text-base-content">
+                        <span className="label-text text-base text-base-content dark:text-white/90">
                           What is your image url?
                         </span>
                       </div>
@@ -226,12 +226,12 @@ const MyTutorials = () => {
                         defaultValue={updateTutorialData.imageUrl}
                         name="imageUrl"
                         placeholder="Type here"
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                       />
                     </label>
                     <label className="form-control w-full">
                       <div className="label">
-                        <span className="label-text text-base text-base-content">
+                        <span className="label-text text-base text-base-content dark:text-white/90">
                           What language is your tutorial in?
                         </span>
                       </div>
@@ -240,12 +240,12 @@ const MyTutorials = () => {
                         name="language"
                         defaultValue={updateTutorialData.language}
                         placeholder="eg. English"
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                       />
                     </label>
                     <label className="form-control w-full">
                       <div className="label">
-                        <span className="label-text text-base text-base-content">
+                        <span className="label-text text-base text-base-content dark:text-white/90">
                           Set the price for your tutorial
                         </span>
                       </div>
@@ -254,12 +254,12 @@ const MyTutorials = () => {
                         name="price"
                         defaultValue={updateTutorialData.price}
                         placeholder="eg. 5000"
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                       />
                     </label>
                     <label className="form-control w-full">
                       <div className="label">
-                        <span className="label-text text-base text-base-content">
+                        <span className="label-text text-base text-base-content dark:text-white/90">
                           Review
                         </span>
                       </div>
@@ -268,19 +268,19 @@ const MyTutorials = () => {
                         name="review"
                         placeholder=""
                         value={updateTutorialData.review}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full dark:bg-[#4e4e4e] dark:text-white/60"
                       />
                     </label>
                     <label className="form-control w-full">
                       <div className="label">
-                        <span className="label-text text-base text-base-content">
+                        <span className="label-text text-base text-base-content dark:text-white/90">
                           Provide a Description
                         </span>
                       </div>
                       <textarea
                         name="description"
                         defaultValue={updateTutorialData.description}
-                        className="textarea textarea-bordered"
+                        className="textarea textarea-bordered dark:bg-[#4e4e4e] dark:text-white/60"
                         placeholder="Type here"
                       ></textarea>
                     </label>

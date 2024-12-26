@@ -20,7 +20,7 @@ const CategoryPage = () => {
           {tutors.map((tutor) => (
             <div
               key={tutor._id}
-              className="w-full rounded-md shadow-md bg-base-100 dark:bg-gray-50 dark:text-gray-800"
+              className="w-full rounded-md shadow-md bg-base-100 dark:bg-[#222222] dark:text-gray-800"
             >
               <img
                 src={tutor.imageUrl}
@@ -29,21 +29,21 @@ const CategoryPage = () => {
               />
               <div className="flex flex-col justify-between p-6 space-y-8">
                 <div className="space-y-2">
-                  <h2 className="text-xl font-semibold tracking-wide text-base-content">
+                  <h2 className="text-xl font-semibold tracking-wide text-base-content dark:text-white/90">
                     {tutor.name}
                   </h2>
-                  <span className="badge badge-ghost bg-primary/10 text-primary badge-md">
+                  <span className="badge badge-ghost bg-primary/10 text-primary badge-md dark:border-none">
                     {tutor?.language.charAt(0).toUpperCase() +
                       tutor?.language.slice(1)}
                   </span>
-                  <p className=" text-xs sm:text-base dark:text-gray-600 flex items-center gap-1">
+                  <p className="text-xs sm:text-base dark:text-white/60 flex items-center gap-1">
                     <FaBangladeshiTakaSign className="w-4 h-4 fill-primary" />{" "}
                     {tutor.price} BDT
                   </p>
                   <p className="text-base text-base-content-secondary flex items-center gap-1">
                     <BiStar />
                     Review:{" "}
-                    <span className="text-base-content font-semibold">
+                    <span className="text-base-content font-semibold dark:text-white/90">
                       {tutor.review}
                     </span>
                   </p>

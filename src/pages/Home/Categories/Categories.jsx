@@ -14,7 +14,7 @@ const Categories = () => {
     <>
       <div className="main-container my-12 md:my-20 lg:my-32">
         <div className="max-w-xl">
-          <h2 className="text-xl md:text-2xl lg:text-4xl font-bold">
+          <h2 className="text-xl md:text-2xl lg:text-4xl font-bold dark:text-white/90">
             Explore the World{" "}
             <span className="text-primary">Through Language</span>
           </h2>
@@ -28,10 +28,10 @@ const Categories = () => {
           {tutorials.map((language, idx) => (
             <Link
               to={`/find-tutors/${language}`}
-              className="px-8 py-5 bg-base-100 rounded-lg cursor-pointer flex items-center justify-between hover:bg-primary hover:text-primary-content group"
+              className="px-8 py-5 bg-base-100  rounded-lg cursor-pointer flex items-center justify-between hover:bg-primary hover:text-primary-content group dark:bg-[#222222] dark:hover:bg-primary dark:text-white/90"
               key={idx}
             >
-              <p className="text-lg font-medium text-base-content flex items-center gap-2 group-hover:text-primary-content">
+              <p className="text-lg font-medium text-base-content dark:text-white/90 flex items-center gap-2 group-hover:text-primary-content">
                 <span>
                   <GrLanguage />
                 </span>{" "}
