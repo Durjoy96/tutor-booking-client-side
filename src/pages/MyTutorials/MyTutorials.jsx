@@ -15,7 +15,7 @@ const MyTutorials = () => {
   const useAxios = AxiosSecure();
 
   useEffect(() => {
-    useAxios.get(`/tutorials?email=${user.email}`).then((res) => {
+    useAxios.get(`/my-tutorials?email=${user.email}`).then((res) => {
       setTutorials(res.data);
     });
   }, [refresh]);
