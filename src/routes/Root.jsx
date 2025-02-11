@@ -9,8 +9,8 @@ const Root = () => {
   return (
     <>
       <header
-        className={`sticky top-0 bg-base-100/70 backdrop-blur-lg z-20  ${
-          darkMode ? "dark" : ""
+        className={`sticky top-0 bg-base-100/70 backdrop-blur-lg z-20 ${
+          darkMode ? "dark bg-[#4e4e4e80] text-white/80" : ""
         }`}
       >
         <Navbar></Navbar>
