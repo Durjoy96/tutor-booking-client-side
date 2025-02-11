@@ -1,6 +1,12 @@
+import toast from "react-hot-toast";
 import contactImg from "../../../assets/icons/contact.png";
 
 const Contact = () => {
+  const formHandler = (e) => {
+    e.preventDefault();
+    toast.success("Success!");
+    e.target.reset();
+  };
   return (
     <>
       <div className="main-container mt-12 md:mt-20 lg:mt-32 grid grid-cols-1 gap-8 mx-auto rounded-lg md:grid-cols-2 dark:bg-dark dark:text-white/90">
@@ -15,7 +21,7 @@ const Contact = () => {
           </div>
           <img src={contactImg} alt="" className="p-6" />
         </div>
-        <form noValidate="" className="space-y-6">
+        <form onSubmit={formHandler} className="space-y-6">
           <div>
             <label htmlFor="name" className="text-sm">
               Full name
@@ -25,6 +31,7 @@ const Contact = () => {
               type="text"
               placeholder=""
               className="w-full p-3 rounded dark:bg-[#222222]"
+              required
             />
           </div>
           <div>
@@ -35,6 +42,7 @@ const Contact = () => {
               id="email"
               type="email"
               className="w-full p-3 rounded dark:bg-[#222222]"
+              required
             />
           </div>
           <div>
@@ -45,6 +53,7 @@ const Contact = () => {
               id="message"
               rows="3"
               className="w-full p-3 rounded dark:bg-[#222222]"
+              required
             ></textarea>
           </div>
           <button
