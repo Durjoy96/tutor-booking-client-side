@@ -3,11 +3,15 @@ import { BiStar } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import AxiosSecure from "../../hooks/AxiosSecure";
 import Loading from "../../components/Loading/Loading";
-import { TbSortAscendingNumbers } from "react-icons/tb";
+import {
+  TbSortAscendingNumbers,
+  TbSortDescendingNumbers,
+} from "react-icons/tb";
 
 const FindTutor = () => {
   const [tutorials, setTutorials] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [ascending, setAscending] = useState(true);
   const useAxios = AxiosSecure();
   useEffect(() => {
     useAxios
@@ -31,10 +35,19 @@ const FindTutor = () => {
   };
 
   const sortHandler = () => {
-    const sortTutorials = [...tutorials].sort(
-      (item1, item2) => item1.review - item2.review
-    );
-    setTutorials(sortTutorials);
+    let sorted = [];
+    if (ascending) {
+      sorted = [...tutorials].sort(
+        (item1, item2) => item1.review - item2.review
+      );
+      setAscending(false);
+    } else {
+      sorted = [...tutorials]
+        .sort((item1, item2) => item1.review - item2.review)
+        .reverse();
+      setAscending(true);
+    }
+    setTutorials(sorted);
   };
 
   return (
@@ -65,7 +78,11 @@ const FindTutor = () => {
           {/* Sort by price */}
           <div>
             <button onClick={sortHandler} className="secondary-btn py-3">
-              <TbSortAscendingNumbers />
+              {ascending ? (
+                <TbSortAscendingNumbers />
+              ) : (
+                <TbSortDescendingNumbers />
+              )}
               Sort by review
             </button>
           </div>
