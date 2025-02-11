@@ -3,6 +3,7 @@ import { BiStar } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import AxiosSecure from "../../hooks/AxiosSecure";
 import Loading from "../../components/Loading/Loading";
+import { TbSortAscendingNumbers } from "react-icons/tb";
 
 const FindTutor = () => {
   const [tutorials, setTutorials] = useState([]);
@@ -33,7 +34,7 @@ const FindTutor = () => {
     <>
       <div className="main-container mt-12 md:mt-20">
         {/* search by language */}
-        <div className="flex justify-end mb-12">
+        <div className="flex flex-col md:flex-row items-center justify-end gap-6 mb-12">
           <label className="input input-bordered flex items-center gap-2 dark:bg-[#222222] ">
             <input
               type="text"
@@ -54,6 +55,13 @@ const FindTutor = () => {
               />
             </svg>
           </label>
+          {/* Sort by price */}
+          <div>
+            <button className="secondary-btn py-3">
+              <TbSortAscendingNumbers />
+              Sort by price
+            </button>
+          </div>
         </div>
         {/* cards */}
         <div className="grid gird-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
