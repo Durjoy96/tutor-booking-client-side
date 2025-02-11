@@ -3,6 +3,7 @@ import NavPage from "./NavPage";
 import { Tooltip } from "react-tooltip";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { BiLogOut } from "react-icons/bi";
 
 const Navbar = () => {
   const { user, signOutUser, setDarkMode } = useContext(AuthContext);
@@ -56,7 +57,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 dark:bg-black rounded-box z-[10] mt-3 w-52 p-2 shadow gap-2"
+                className="menu menu-sm dropdown-content bg-base-100 dark:bg-[#4e4e4e] rounded-box z-[10] mt-3 w-52 p-2 shadow gap-2"
               >
                 {navbarPages.map((page, idx) => (
                   <NavPage key={idx} page={page}></NavPage>
@@ -90,15 +91,15 @@ const Navbar = () => {
                   </div>
                   <ul
                     tabIndex={0}
-                    className="dropdown-content menu bg-base-100 dark:bg-black rounded-box z-[10] w-32 p-2 shadow"
+                    className="dropdown-content menu bg-base-100 dark:bg-[#4e4e4e] rounded-box z-[10] w-32 p-2 shadow"
                   >
-                    <p className="text-base-content font-semibold hover:bg-transparent px-2 pt-2">
+                    <p className="text-base-content font-semibold hover:bg-transparent px-2 pt-2 dark:text-white">
                       {user?.displayName}
                     </p>
                     <li>
                       <button onClick={signOutUser} className="text-red-500">
                         {" "}
-                        Log Out
+                        <BiLogOut /> Log Out
                       </button>
                     </li>
                   </ul>
