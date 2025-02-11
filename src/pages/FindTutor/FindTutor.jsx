@@ -30,6 +30,13 @@ const FindTutor = () => {
       .then((res) => setTutorials(res.data));
   };
 
+  const sortHandler = () => {
+    const sortTutorials = [...tutorials].sort(
+      (item1, item2) => item1.review - item2.review
+    );
+    setTutorials(sortTutorials);
+  };
+
   return (
     <>
       <div className="main-container mt-12 md:mt-20">
@@ -57,9 +64,9 @@ const FindTutor = () => {
           </label>
           {/* Sort by price */}
           <div>
-            <button className="secondary-btn py-3">
+            <button onClick={sortHandler} className="secondary-btn py-3">
               <TbSortAscendingNumbers />
-              Sort by price
+              Sort by review
             </button>
           </div>
         </div>
