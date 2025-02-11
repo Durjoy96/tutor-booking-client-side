@@ -63,7 +63,10 @@ const Navbar = () => {
                 ))}
               </ul>
             </div>
-            <Link to="/" className="text-2xl text-primary text-bold">
+            <Link
+              to="/"
+              className="text-2xl md:text-3xl text-primary font-bold"
+            >
               Titly
             </Link>
           </div>
