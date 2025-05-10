@@ -55,7 +55,7 @@ const TutorDetails = () => {
           <div className="flex flex-col justify-center max-w-xl p-6 shadow-md rounded-xl sm:px-12 bg-base-100 dark:bg-[#222222] dark:text-white/90 relative">
             <img
               src={tutor.imageUrl}
-              alt=""
+              alt="Tutor"
               className="w-32 h-32 mx-auto object-cover rounded-full dark:bg-gray-500 aspect-square"
             />
             <div className="space-y-4 divide-y dark:divide-gray-300">

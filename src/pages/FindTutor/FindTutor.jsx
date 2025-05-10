@@ -96,7 +96,7 @@ const FindTutor = () => {
             >
               <img
                 src={tutorial.imageUrl}
-                alt=""
+                alt="Tutorial"
                 className="object-cover object-center w-full rounded-t-md h-60 dark:bg-gray-500"
               />
               <div className="flex flex-col justify-between p-6 space-y-8">

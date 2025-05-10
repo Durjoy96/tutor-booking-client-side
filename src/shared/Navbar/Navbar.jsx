@@ -86,7 +86,7 @@ const Navbar = () => {
                     <img
                       className="w-10 h-10 rounded-full object-cover object-center cursor-pointer"
                       src={user?.photoURL}
-                      alt=""
+                      alt="User"
                     />
                   </div>
                   <ul

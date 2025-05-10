@@ -19,7 +19,7 @@ const Contact = () => {
               For any query free free to contact with us
             </div>
           </div>
-          <img src={contactImg} alt="" className="p-6" />
+          <img src={contactImg} alt="Contact" className="p-6" />
         </div>
         <form onSubmit={formHandler} className="space-y-6">
           <div>

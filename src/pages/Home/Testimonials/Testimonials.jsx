@@ -44,7 +44,7 @@ const Testimonials = () => {
               <div className="flex flex-col items-center justify-center p-8 rounded-b-lg dark:bg-[#4e4e4e] dark:text-gray-50">
                 <img
                   src="https://randomuser.me/api/portraits/women/44.jpg"
-                  alt=""
+                  alt="User"
                   className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500"
                 />
                 <p className="text-xl font-semibold leading-tight">
@@ -83,7 +83,7 @@ const Testimonials = () => {
               <div className="flex flex-col items-center justify-center p-8 rounded-b-lg dark:bg-[#4e4e4e] dark:text-gray-50">
                 <img
                   src="https://randomuser.me/api/portraits/women/68.jpg"
-                  alt=""
+                  alt="User"
                   className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500"
                 />
                 <p className="text-xl font-semibold leading-tight">
@@ -122,7 +122,7 @@ const Testimonials = () => {
               <div className="flex flex-col items-center justify-center p-8 rounded-b-lg dark:bg-[#4e4e4e] dark:text-gray-50">
                 <img
                   src="https://randomuser.me/api/portraits/men/75.jpg"
-                  alt=""
+                  alt="User"
                   className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500"
                 />
                 <p className="text-xl font-semibold leading-tight">
@@ -161,7 +161,7 @@ const Testimonials = () => {
               <div className="flex flex-col items-center justify-center p-8 rounded-b-lg dark:bg-[#4e4e4e] dark:text-gray-50">
                 <img
                   src="https://randomuser.me/api/portraits/men/34.jpg"
-                  alt=""
+                  alt="User"
                   className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full dark:bg-gray-500"
                 />
                 <p className="text-xl font-semibold leading-tight">

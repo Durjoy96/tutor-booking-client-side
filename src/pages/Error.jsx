@@ -9,7 +9,7 @@ const ErrorPage = () => {
     <>
       <div className="flex flex-col justify-center items-center h-screen">
         <div className="max-w-32 lg:max-w-64">
-          <img className="w-full animate-bounce" src={ErrorLaptopImg} alt="" />
+          <img className="w-full animate-bounce" src={ErrorLaptopImg} alt="Error" />
         </div>
         <div className="text-center">
           <h2 className="text-4xl lg:text-7xl font-bold text-red-500">
