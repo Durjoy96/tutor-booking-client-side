@@ -14,8 +14,8 @@ const Stats = () => {
   return (
     <>
       <div className="main-container mt-12 md:mt-20">
-        <div className="grid grid-cols-1 md:grid-cols-4">
-          <div className="text-center border dark:border-primary py-2">
+        <div className="flex justify-between items-center gap-6 flex-wrap">
+          <div className="text-center">
             <p className="text-xl md:text-3xl lg:text-4xl font-bold text-base-content dark:text-white/90">
               <CountUp start={1} end={stats.tutorsCount} />+
             </p>
@@ -23,7 +23,7 @@ const Stats = () => {
               Total Tutors
             </p>
           </div>
-          <div className="text-center border dark:border-primary py-2">
+          <div className="text-center">
             <p className="text-xl md:text-3xl lg:text-4xl font-bold text-base-content dark:text-white/90">
               <CountUp start={10} end={stats.reviewCount} />+
             </p>
@@ -31,7 +31,7 @@ const Stats = () => {
               Reviews
             </p>
           </div>
-          <div className="text-center border dark:border-primary py-2">
+          <div className="text-center">
             <p className="text-xl md:text-3xl lg:text-4xl font-bold text-base-content dark:text-white/90">
               <CountUp start={1} end={stats.languageCount} />+
             </p>
@@ -39,7 +39,7 @@ const Stats = () => {
               Languages
             </p>
           </div>
-          <div className="text-center border dark:border-primary py-2">
+          <div className="text-center">
             <p className="text-xl md:text-3xl lg:text-4xl font-bold text-base-content dark:text-white/90">
               <CountUp start={1} end={stats.usersCount} />+
             </p>
