@@ -8,9 +8,9 @@ const Root = () => {
   const { darkMode } = useContext(AuthContext);
   return (
     <>
-      <div className={`${darkMode ? "dark text-white/80" : ""}`}>
+      <div className={`sticky top-0 ${darkMode ? "dark text-white/80" : ""}`}>
         <header
-          className={`sticky top-0 bg-base-100/70 backdrop-blur-lg z-20 dark:bg-[#4e4e4e]/80`}
+          className={`bg-base-100/70 backdrop-blur-lg z-20 dark:bg-[#4e4e4e]/80`}
         >
           <Navbar></Navbar>
         </header>
