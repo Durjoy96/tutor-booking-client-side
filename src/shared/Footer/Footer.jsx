@@ -30,17 +30,29 @@ const Footer = () => {
                 </h3>
                 <ul className="space-y-1">
                   <li>
-                    <a rel="noopener noreferrer" href="#">
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="hover:text-primary transition-colors duration-200"
+                    >
                       Features
                     </a>
                   </li>
                   <li>
-                    <a rel="noopener noreferrer" href="#">
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="hover:text-primary transition-colors duration-200"
+                    >
                       Integrations
                     </a>
                   </li>
                   <li>
-                    <a rel="noopener noreferrer" href="#">
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="hover:text-primary transition-colors duration-200"
+                    >
                       FAQ
                     </a>
                   </li>
@@ -52,12 +64,20 @@ const Footer = () => {
                 </h3>
                 <ul className="space-y-1">
                   <li>
-                    <a rel="noopener noreferrer" href="#">
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="hover:text-primary transition-colors duration-200"
+                    >
                       Privacy
                     </a>
                   </li>
                   <li>
-                    <a rel="noopener noreferrer" href="#">
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="hover:text-primary transition-colors duration-200"
+                    >
                       Terms of Service
                     </a>
                   </li>
@@ -67,17 +87,29 @@ const Footer = () => {
                 <h3 className="uppercase dark:text-white/90">Developers</h3>
                 <ul className="space-y-1">
                   <li>
-                    <a rel="noopener noreferrer" href="#">
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="hover:text-primary transition-colors duration-200"
+                    >
                       Public API
                     </a>
                   </li>
                   <li>
-                    <a rel="noopener noreferrer" href="#">
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="hover:text-primary transition-colors duration-200"
+                    >
                       Documentation
                     </a>
                   </li>
                   <li>
-                    <a rel="noopener noreferrer" href="#">
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="hover:text-primary transition-colors duration-200"
+                    >
                       Guides
                     </a>
                   </li>
@@ -90,7 +122,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     href="#"
                     title="Facebook"
-                    className="flex items-center p-1"
+                    className="flex items-center p-1 hover:text-primary transition-colors duration-200"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +137,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     href="#"
                     title="Twitter"
-                    className="flex items-center p-1"
+                    className="flex items-center p-1 hover:text-primary transition-colors duration-200"
                   >
                     <svg
                       viewBox="0 0 24 24"
@@ -119,7 +151,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     href="#"
                     title="Instagram"
-                    className="flex items-center p-1"
+                    className="flex items-center p-1 hover:text-primary transition-colors duration-200"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +167,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="py-6 text-sm text-center dark:text-white/80">
-            © 2024 Company Co. All rights reserved.
+            © 2025 Titly All rights reserved.
           </div>
         </footer>
       </div>
