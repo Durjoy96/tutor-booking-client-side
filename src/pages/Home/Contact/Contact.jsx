@@ -9,7 +9,7 @@ const Contact = () => {
   };
   return (
     <>
-      <div className="main-container mt-12 md:mt-20 lg:mt-32 grid grid-cols-1 gap-8 mx-auto rounded-lg md:grid-cols-2 dark:bg-dark dark:text-white/90">
+      <div className="main-container py-12 md:py-20 lg:py-32 grid grid-cols-1 gap-8 mx-auto rounded-lg md:grid-cols-2 dark:bg-dark dark:text-white/90">
         <div className="flex flex-col justify-between">
           <div className="space-y-2">
             <h2 className="text-xl font-semibold leading-tight md:text-3xl lg:text-4xl">
