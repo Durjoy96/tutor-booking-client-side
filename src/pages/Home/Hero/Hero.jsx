@@ -7,10 +7,10 @@ const Hero = () => {
     <>
       <section className="bg-base-100 py-12 lg:py-24 dark:bg-[#222222]">
         <div className="max-w-screen-xl px-5 container flex flex-col justify-center  mx-auto lg:flex-row lg:justify-between">
-          <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-2xl lg:text-left">
+          <div className="flex flex-col justify-center text-center rounded-sm lg:max-w-xl lg:text-left">
             <h1 className="text-5xl font-bold leading-none text-base-content sm:text-6xl dark:text-white/90">
-              Master Any <span className="text-primary">Language or Skill</span>{" "}
-              with Expert Tutors!
+              Master Any <span className="text-primary">Language</span> with
+              Expert Tutors!
             </h1>
             <p className="mt-6 mb-8 text-lg text-base-content-secondary sm:mb-12">
               Book personalized sessions with professional tutors from around
