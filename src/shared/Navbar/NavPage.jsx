@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
 
-const NavPage = ({ page }) => {
+const NavPage = ({ page, handleNavPageClick }) => {
   const { path, name } = page;
   return (
     <>
-      <li>
+      <li onClick={handleNavPageClick}>
         <NavLink
           to={path}
           className={({ isActive }) =>

@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import NavPage from "./NavPage";
 import { Tooltip } from "react-tooltip";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { BiLogOut } from "react-icons/bi";
 
 const Navbar = () => {
   const { user, signOutUser, setDarkMode } = useContext(AuthContext);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navbarPages = [
     { path: "/", name: "Home" },
     { path: "/find-tutors", name: "Find tutors" },
@@ -20,6 +21,10 @@ const Navbar = () => {
       name: "My booked tutors",
     },
   ];
+
+  const handleNavPageClick = () => {
+    setIsDropdownOpen(() => false); // Close the dropdown when a NavPage is clicked
+  };
 
   const darkThemeHandler = () => {
     setDarkMode(true);
@@ -39,6 +44,7 @@ const Navbar = () => {
                 tabIndex={0}
                 role="button"
                 className="btn btn-ghost lg:hidden"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -55,14 +61,20 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 dark:bg-[#4e4e4e] rounded-box z-[10] mt-3 w-52 p-2 shadow gap-2"
-              >
-                {navbarPages.map((page, idx) => (
-                  <NavPage key={idx} page={page}></NavPage>
-                ))}
-              </ul>
+              {isDropdownOpen && (
+                <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content bg-base-100 dark:bg-[#4e4e4e] rounded-box z-[10] mt-3 w-52 p-2 shadow gap-2"
+                >
+                  {navbarPages.map((page, idx) => (
+                    <NavPage
+                      key={idx}
+                      page={page}
+                      handleNavPageClick={handleNavPageClick} // Pass the click handler
+                    />
+                  ))}
+                </ul>
+              )}
             </div>
             <Link
               to="/"
