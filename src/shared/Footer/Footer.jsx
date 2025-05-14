@@ -7,7 +7,7 @@ const Footer = () => {
     <>
       <div className={`${darkMode ? "dark" : ""} `}>
         <footer
-          className={`px-4 mt-20 md:mt-32 lg:mt-64 divide-y bg-base-100 dark:bg-[#222222] dark:text-white/60 ${
+          className={`px-4  mt-20 md:mt-20 lg:mt-32 divide-y bg-base-100 dark:bg-[#222222] dark:text-white/60 ${
             darkMode ? "dark" : ""
           }`}
         >
